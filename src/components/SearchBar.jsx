@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 
-/**
- * Search Bar Component
- * Handles movie search input and submission
- * @param {Function} onSearch - Callback function called when search is submitted
- */
+
 const SearchBar = ({ onSearch }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
