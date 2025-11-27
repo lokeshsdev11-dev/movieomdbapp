@@ -1,11 +1,7 @@
 import React from 'react';
 import MovieCard from './MovieCard.jsx';
 
-/**
- * Movie List Component
- * Displays movies in a grid layout
- * @param {Array} movies - Array of movie objects
- */
+
 const MovieList = ({ movies }) => {
   if (!movies || movies.length === 0) {
     return (
