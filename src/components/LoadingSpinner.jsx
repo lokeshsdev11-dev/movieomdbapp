@@ -1,9 +1,6 @@
 import React from 'react';
 
-/**
- * Loading Spinner Component
- * Displays a loading indicator
- */
+
 const LoadingSpinner = () => {
   return (
     <div className="flex justify-center items-center py-12">
