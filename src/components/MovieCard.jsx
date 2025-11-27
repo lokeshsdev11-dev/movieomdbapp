@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-/**
- * Movie Card Component
- * Displays movie information in a card format
- * @param {Object} movie - Movie object with title, year, poster, imdbID
- */
+
 const MovieCard = ({ movie }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
   
-  // Default placeholder image
+  
   const placeholderImage = 'https://via.placeholder.com/300x450/1f2937/ffffff?text=No+Poster';
   const posterUrl = movie.Poster && movie.Poster !== 'N/A' && !imageError 
     ? movie.Poster 
     : placeholderImage;
 
   const handleImageError = (e) => {
-    // Prevent infinite loop if placeholder also fails
+   
     if (e.target.src !== placeholderImage) {
       setImageError(true);
       e.target.src = placeholderImage;
