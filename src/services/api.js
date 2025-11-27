@@ -3,7 +3,7 @@
  * Handles all movie data fetching operations
  */
 
-const API_KEY = '534a417'; // Replace with your OMDB API key - Get one from http://www.omdbapi.com/apikey.aspx
+const API_KEY = '7b0be7'; // Replace with your OMDB API key - Get one from http://www.omdbapi.com/apikey.aspx
 const BASE_URL = 'https://www.omdbapi.com/';
 
 /**
