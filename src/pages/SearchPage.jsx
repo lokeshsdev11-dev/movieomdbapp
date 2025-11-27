@@ -33,21 +33,14 @@ const SearchPage = () => {
     }
   }, [location.pathname]);
 
-  /**
-   * Handles movie search
-   * @param {string} term - Search term
-   */
+ 
   const handleSearch = async (term) => {
     setSearchTerm(term);
     setCurrentPage(1);
     await fetchMovies(term, selectedType, 1);
   };
 
-  /**
-   * Handles type filter change
-   * Uses API endpoint for filtering, not array.filter()
-   * @param {string} type - Selected type filter
-   */
+ 
   const handleTypeChange = async (type) => {
     setSelectedType(type);
     setCurrentPage(1);
@@ -56,23 +49,14 @@ const SearchPage = () => {
     }
   };
 
-  /**
-   * Handles page change for pagination
-   * @param {number} page - Page number
-   */
+  
   const handlePageChange = async (page) => {
     setCurrentPage(page);
     await fetchMovies(searchTerm, selectedType, page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  /**
-   * Fetches movies from API
-   * Uses API endpoint for type filtering, not array.filter()
-   * @param {string} term - Search term
-   * @param {string} type - Type filter
-   * @param {number} page - Page number
-   */
+ 
   const fetchMovies = async (term, type, page) => {
     if (!term.trim()) {
       setMovies([]);
@@ -86,7 +70,7 @@ const SearchPage = () => {
     try {
       let result;
       
-      // Use API endpoint for filtering, not array.filter()
+      
       if (type && type !== 'all') {
         result = await getMoviesByType(type, term, page);
       } else {
