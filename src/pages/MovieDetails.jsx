@@ -4,10 +4,7 @@ import { getMovieDetails } from '../services/api.js';
 import ErrorMessage from '../components/ErrorMessage.jsx';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 
-/**
- * Movie Details Page Component
- * Displays detailed information about a specific movie
- */
+
 const MovieDetails = () => {
   const { imdbID } = useParams();
   const navigate = useNavigate();
@@ -71,14 +68,14 @@ const MovieDetails = () => {
     return null;
   }
 
-  // Default placeholder image
+ 
   const placeholderImage = 'https://via.placeholder.com/400x600/1f2937/ffffff?text=No+Poster';
   const posterUrl = movie.Poster && movie.Poster !== 'N/A' && !imageError 
     ? movie.Poster 
     : placeholderImage;
 
   const handleImageError = (e) => {
-    // Prevent infinite loop if placeholder also fails
+    
     if (e.target.src !== placeholderImage) {
       setImageError(true);
       e.target.src = placeholderImage;
@@ -90,12 +87,12 @@ const MovieDetails = () => {
     setImageLoading(false);
   };
 
-  // Parse ratings
+  
   const ratings = movie.Ratings || [];
   const imdbRating = movie.imdbRating !== 'N/A' ? movie.imdbRating : 'N/A';
   const metascore = movie.Metascore !== 'N/A' ? movie.Metascore : 'N/A';
 
-  // Parse actors
+
   const actors = movie.Actors && movie.Actors !== 'N/A' ? movie.Actors.split(', ') : [];
 
   return (
