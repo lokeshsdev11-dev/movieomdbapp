@@ -1,10 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-/**
- * Navigation Bar Component
- * Provides navigation links and branding
- */
+
 const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
