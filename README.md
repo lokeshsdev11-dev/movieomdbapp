@@ -17,9 +17,10 @@ A full-featured movie search application built with React that integrates with t
 
 ## Tech Stack
 
-- **React.js** - UI library
-- **Vite** - Build tool and development server
-- **React Router** - Client-side routing
-- **Tailwind CSS** - Utility-first CSS framework
-- **OMDB API** - Movie database API
+- **Tailwind CSS**
+- **ReactJs** 
+- **React Router**
+- **OMDB API** 
+
+
 
