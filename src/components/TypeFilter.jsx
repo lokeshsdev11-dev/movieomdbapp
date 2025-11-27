@@ -1,12 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-/**
- * Type Filter Component
- * Dropdown filter for movie types (movie, series, episode)
- * Uses API endpoint for filtering, not array.filter()
- * @param {string} selectedType - Currently selected type
- * @param {Function} onTypeChange - Callback function when type changes
- */
+
 const TypeFilter = ({ selectedType, onTypeChange }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -20,7 +14,7 @@ const TypeFilter = ({ selectedType, onTypeChange }) => {
 
   const selectedTypeData = types.find(type => type.value === selectedType) || types[0];
 
-  // Close dropdown when clicking outside
+  
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
