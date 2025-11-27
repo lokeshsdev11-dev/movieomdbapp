@@ -1,23 +1,14 @@
-/**
- * API Service for OMDB API
- * Handles all movie data fetching operations
- */
 
-const API_KEY = '7b0be7'; // Replace with your OMDB API key - Get one from http://www.omdbapi.com/apikey.aspx
+
+const API_KEY = '7b0be7'; 
 const BASE_URL = 'https://www.omdbapi.com/';
 
-/**
- * Fetches movie search results from OMDB API
- * @param {string} searchTerm - The movie title or keyword to search for
- * @param {number} page - Page number for pagination (default: 1)
- * @param {string} type - Filter by type: movie, series, episode (optional)
- * @returns {Promise<Object>} Search results with movies array and total results
- */
+
 export const searchMovies = async (searchTerm, page = 1, type = '') => {
   try {
     let url = `${BASE_URL}?apikey=${API_KEY}&s=${encodeURIComponent(searchTerm)}&page=${page}`;
     
-    // Add type filter if provided (using API endpoint, not array.filter())
+    
     if (type && type !== 'all') {
       url += `&type=${type}`;
     }
@@ -45,11 +36,7 @@ export const searchMovies = async (searchTerm, page = 1, type = '') => {
   }
 };
 
-/**
- * Fetches detailed information for a specific movie by IMDB ID
- * @param {string} imdbID - The IMDB ID of the movie
- * @returns {Promise<Object>} Detailed movie information
- */
+
 export const getMovieDetails = async (imdbID) => {
   try {
     const url = `${BASE_URL}?apikey=${API_KEY}&i=${imdbID}&plot=full`;
@@ -71,13 +58,7 @@ export const getMovieDetails = async (imdbID) => {
   }
 };
 
-/**
- * Fetches movies by type filter (using API endpoint)
- * @param {string} type - Filter by type: movie, series, episode
- * @param {string} searchTerm - The search term (optional)
- * @param {number} page - Page number for pagination (default: 1)
- * @returns {Promise<Object>} Filtered search results
- */
+
 export const getMoviesByType = async (type, searchTerm = '', page = 1) => {
   try {
     let url = `${BASE_URL}?apikey=${API_KEY}&type=${type}&page=${page}`;
