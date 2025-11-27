@@ -1,12 +1,6 @@
 import React from 'react';
 
-/**
- * Pagination Component
- * Handles page navigation for search results
- * @param {number} currentPage - Current page number
- * @param {number} totalPages - Total number of pages
- * @param {Function} onPageChange - Callback function when page changes
- */
+
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   if (totalPages <= 1) return null;
 
